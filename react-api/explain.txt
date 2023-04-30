@@ -1,0 +1,133 @@
+database 
+    ==> to store the data
+    ==> secure your data
+    ==> data is store in structural manner
+
+database can a online or offline
+
+SQL Database (structure query language)
+    # learn that language
+    # we can create a database
+    # database =>
+        tables =>
+            rows =>
+                columns
+    # need to follow structure
+    # structure => Schema
+    # store a data more space
+    # We can create a relationship between 2 or more table
+    # SQL (MYSQL => 151)
+    
+
+
+No SQL Database
+    # data can handle by object & methods
+    # we can create a database
+    # database =>
+        collection =>
+            document =>
+                fields
+    # it is not mandatory follow the structure
+    # They are Schema Less
+    # Store Data in less space
+    # We can have =>
+        no relationship
+        data embedded
+        create a relationship between 2 or more collections
+    # MongoDB 500
+    # document ==> objects ==> {name:"Deepak",age:31} ==> BSON Format
+
+
+CRUD 
+    Create/Add/Insert
+    Read
+    Update
+    Delete
+
+"_id" : "637a22d8 281ad36bff c7342a" => ... 0 to 9 a..f 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+Hex = 16
+unique key & not a null => Primary key
+
+12 byte
+    4 Byte => 637a22d8
+    5 Byte => 281ad36bff
+    3 Byte => c7342a
+
+# database
+    show dbs
+    
+    # create/switch a db
+        use batch64edureka
+
+    # check current DB
+        db
+
+    # Delete Database
+        db.dropDatabase()
+
+# collection
+    # create a new collection
+        db.createCollection('locations')
+
+# document => object => BSON
+    #Create/Insert/Add
+        # single record
+            db.collectionName.insert({
+                                            "name": "ShalimarBhagh, Delhi",
+                                            "city_id": "1",
+                                            "location_id": "1",
+                                            "country_name": "India"
+                                        })
+        # multiple record
+            .insertMany([])
+
+    #Read
+        #read record from collection
+            db.locations.find()
+            db.locations.find().pretty()
+            db.locations.find().limit(2).pretty()
+            db.locations.find().count()
+            db.locations.find({location_id:5},{name:1})
+
+    #Update
+        db.locations.updateOne({},{
+            $set:{
+                country_name:"Bharat",
+            }
+        })
+        // country_name ==> country
+        db.locations.updateMany({},{
+            $rename:{
+                country_name:'country',
+            }
+        })
+
+        db.locations.updateMany({location_id : "5"},{
+            $set:{
+                city_id:"6",
+            }
+        })
+
+    #Delete
+        db.locations.deleteOne()
+        db.locations.deleteMany()
+
+
+
+#connect a mongodb to express.js
+    mongoose 
+        => wrapper lib for MongoDB
+        => Pre Validate
+        => Schema Base 
+        => Mongoose promise base lib (async await)
+
+     MongoDB (Driver) 
+
+    npm i mongoose  
+
+# step-1 
+            make a connection with mongodb from express app
+
+# step-2 
+    create a schema & model
+

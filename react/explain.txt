@@ -1,0 +1,20 @@
+// create a account on razorpay
+// under setting > API kye
+
+// integrate razorpay to client side
+// create order id from server 
+    => create api as get-order-id
+
+
+// Google Login 
+    # login to https://console.cloud.google.com/
+    # create a project
+    # OAuth Consent Screen (External)
+    # Credentials   
+        http://localhost
+        http://localhost:3000
+
+    # after successfully login
+        you will get jwt token
+        JWT => JSON Web Token
+         
