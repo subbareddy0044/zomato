@@ -22,6 +22,7 @@ router.get(
 
 router.get("/api/get-menu-items/:rest_id", restaurant.getMenuItems);
 
+
 router.post("/api/filter", restaurant.filter);
 
 //mealtype

@@ -43,31 +43,25 @@ function FilterOption(props) {
             <div className="ms-1">
               <input type="checkbox" className="form-check-input" />
               <label htmlFor="" className="form-check-label ms-1">
-                North Indian
+                south Indian
               </label>
             </div>
             <div className="ms-1">
               <input type="checkbox" className="form-check-input" />
               <label htmlFor="" className="form-check-label ms-1">
-                North Indian
+                Chinese food
               </label>
             </div>
             <div className="ms-1">
               <input type="checkbox" className="form-check-input" />
               <label htmlFor="" className="form-check-label ms-1">
-                North Indian
+                 Fast food
               </label>
             </div>
             <div className="ms-1">
               <input type="checkbox" className="form-check-input" />
               <label htmlFor="" className="form-check-label ms-1">
-                North Indian
-              </label>
-            </div>
-            <div className="ms-1">
-              <input type="checkbox" className="form-check-input" />
-              <label htmlFor="" className="form-check-label ms-1">
-                North Indian
+                Street food
               </label>
             </div>
           </div>

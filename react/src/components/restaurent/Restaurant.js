@@ -104,7 +104,7 @@ function Restaurant() {
     let { order } = data;
 
     var options = {
-      key: "rzp_test_RB0WElnRLezVJ5", // Enter the Key ID generated from the Dashboard
+      key: "rzp_test_aoluE0wTrix8in", // Enter the Key ID generated from the Dashboard
       amount: order.amount, // rupee to paisa
       currency: order.currency,
       name: "Zomato Order",

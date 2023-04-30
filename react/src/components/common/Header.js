@@ -5,7 +5,7 @@ import { useState } from "react";
 function Header(props) {
   let getUserLoginData = () => {
     // read data from local storage
-    let token = localStorage.getItem("batch64token");
+    let token = localStorage.getItem("subbareddy");
     if (token == null) {
       return false;
     } else {
@@ -15,7 +15,7 @@ function Header(props) {
         return result;
       } catch (error) {
         // remove a token from localStorage
-        localStorage.removeItem("batch64token");
+        localStorage.removeItem("subbareddy");
         return false;
       }
     }
@@ -27,7 +27,7 @@ function Header(props) {
     let token = response.credential; // JSON WEB TOken
     // localStorage => 5m to 10mb
     // store
-    localStorage.setItem("batch64token", token);
+    localStorage.setItem("subbareddy", token);
     alert("login in successfully");
     window.location.assign("/");
   };

@@ -2,8 +2,9 @@ const Razorpay = require("razorpay");
 var crypto = require("crypto");
 const OrdersModel = require("../Model/OrdersModel");
 
-const KEY_ID = "rzp_test_RB0WElnRLezVJ5";
-const SECRET_ID = "VLMCIrqKxRMNR9EcRcbL2UG8";
+const KEY_ID = "rzp_test_aoluE0wTrix8in";
+const SECRET_ID = "kVx2HQrbIRLIl0bFFjUKtO6T";
+
 
 var instance = new Razorpay({ key_id: KEY_ID, key_secret: SECRET_ID });
 
@@ -48,6 +49,7 @@ module.exports.verifyPayment = async (request, response) => {
   let data = request.body;
   let { payment_id, order_id, signature } = data;
   let body = order_id + "|" + payment_id;
+  await _saveNewOrder(data);
 
   var expectedSignature = crypto
     .createHmac("sha256", SECRET_ID)
@@ -62,7 +64,7 @@ module.exports.verifyPayment = async (request, response) => {
       status: true,
     });
   } else {
-    response.status(200).send({
+    response.status(404).send({
       status: false,
     });
   }
